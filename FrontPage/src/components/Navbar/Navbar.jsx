@@ -4,8 +4,6 @@ import {
   MDBContainer,
   MDBNavbarBrand,
   MDBNavbarToggler,
-  MDBNavbarItem,
-  MDBNavbarLink,
   MDBCollapse,
   MDBBtn,
   MDBIcon,
@@ -27,7 +25,7 @@ const Navbars = () => {
         expand="lg"
         light
         bgColor="light"
-        style={{ height: "80px" , marginTop: "20px"}}
+        style={{ height: "80px", marginTop: "20px" }}
       >
         <MDBContainer fluid>
           <MDBNavbarBrand href="#" style={{ padding: "7px" }}>
@@ -146,9 +144,9 @@ const Navbars = () => {
               rounded
               className="mx-auto"
               color="info"
-              style={{ width: "150px", backgroundColor: "#8490ff" }}
+              style={{ width: "200px", backgroundColor: "#8490ff" }}
             >
-              Start-up
+              Login / Register
             </MDBBtn>
           </MDBCollapse>
         </MDBContainer>

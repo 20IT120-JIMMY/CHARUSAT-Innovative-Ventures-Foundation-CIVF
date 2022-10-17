@@ -2,7 +2,7 @@
     padding: 5rem 2rem;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
@@ -54,7 +54,7 @@ picture {
 
 .hero-img {
     max-width: 100%;
-    margin: 20px;
+    /* margin: 10px; */
 }
 
 .container {
@@ -219,7 +219,7 @@ picture {
     text-transform: capitalize;
 }
 
-.counter-name{
+.counter-name {
     color: #8490ff;
 }
 
@@ -237,6 +237,6 @@ picture {
 
 }
 
-.latest-card{
+.latest-card {
     justify-content: center;
 }

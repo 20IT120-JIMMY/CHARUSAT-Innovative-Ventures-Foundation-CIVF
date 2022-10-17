@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 import styled from "styled-components";
 import home from "../../images/home.png";
 import startup from "../../images/startup.png";
-// import LatestNewwsImg from "../../assets/svg/book-lover.svg";
+import { MDBBtn } from "mdb-react-ui-kit";
 import "./Hero.css";
 
 const Hero = () => {
@@ -54,8 +54,11 @@ const Hero = () => {
   });
   return (
     <>
-      <div>
-        <div className="container grid grid-two-column">
+      <div style={{ padding: "0", margin: "0" }}>
+        <div
+          className="container grid grid-two-column"
+          style={{ padding: "0", margin: "0" }}
+        >
           <div className="section-hero-data">
             <h1 className="hero-heading">
               <span
@@ -72,6 +75,16 @@ const Hero = () => {
             <p className="hero-top-data">
               CHARUSAT <span> Innovative Ventures </span> Foundation{" "}
             </p>
+            <div  style={{paddingLeft: "15px"}}>
+              <MDBBtn
+                rounded
+                className="mx-auto"
+                color="info"
+                style={{ width: "250px", backgroundColor: "#8490ff"}}
+              >
+                Apply For Start-up
+              </MDBBtn>
+            </div>
             <p className="hero-para" style={{ color: "black" }}>
               <Typewriter
                 options={{
@@ -99,9 +112,9 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="bg-second">
+        <div className="bg-second" style={{ padding: "0", margin: "0" }}>
           <div className="section container">
-            <div className="row d-flex">
+            <div className="row">
               <div className="col-8">
                 <div className="info-data">CIVF Start Up Program</div>
                 <div className="vision">
@@ -245,8 +258,6 @@ const Hero = () => {
             Latest - <span>- Announcements</span>
           </div>
         </div>
-
-        
       </div>
     </>
   );
