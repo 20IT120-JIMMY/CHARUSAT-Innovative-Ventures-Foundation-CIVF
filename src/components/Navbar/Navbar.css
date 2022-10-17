@@ -1,0 +1,77 @@
+.home ::hover {
+    color: #fff;
+}
+
+.home ::before {
+    content: '';
+    position: absolute;
+    background: tomato;
+    width: 100%;
+    height: 6px;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    animation: 1s forwards animation1 linear;
+    z-index: -1;
+}
+
+.home::hover::before,
+.home::focus::before {
+    animation: .5s forwards animation2 linear;
+}
+
+@keyframes animation2 {
+    0% {
+        transform: scalex(0);
+        height: 5px;
+    }
+
+    45% {
+        transform: scalex(1);
+        height: 5px;
+    }
+
+    55% {
+        height: 5px;
+
+    }
+
+    100% {
+        height: 40px;
+        transform: scaleX(1);
+
+    }
+}
+
+@keyframes animation1 {
+    0% {
+        transform: scalex(0);
+        height: 40px;
+    }
+
+    45% {
+        height: 5px;
+    }
+
+    55% {
+        transform: scaleX(1);
+        height: 5px;
+        opacity: 1;
+    }
+
+    100% {
+        height: 5px;
+        transform: scaleX(0);
+        opacity: .02;
+    }
+}
+
+.hover {
+    color: black;
+    cursor: pointer;
+}
+
+.blur#home.active {
+    display: none;
+    pointer-events: none;
+}
