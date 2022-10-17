@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
@@ -9,15 +9,15 @@ function App() {
   return (
     <Router>
       <Navbar />
+      {/* {popup?<Login style={{ position: "absolute" }} />} */}
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
-          <Route path="login" element={<Login />} />
+          {/* <Route path="login" element={<Login />} /> */}
         </Route>
       </Routes>
       <Footer />
     </Router>
-    
   );
 }
 

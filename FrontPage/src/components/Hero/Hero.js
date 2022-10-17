@@ -1,12 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
-import styled from "styled-components";
 import home from "../../images/home.png";
 import startup from "../../images/startup.png";
 import { MDBBtn } from "mdb-react-ui-kit";
+import data from "./data.js";
 import "./Hero.css";
+import { Element, scroller } from "react-scroll";
+import styled from "styled-components";
+
+const TopContainer = styled.div`
+  width: 100%;
+  height: 70vh;
+  padding: 0;
+  background-image: url("https://startupyard.com/wp-content/uploads/2021/06/pilulka-lab-promo.jpg");
+  position: relative;
+`;
+
+const BackgroundFilter = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(55, 55, 55, 0.89);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const Hero = () => {
+  const [noofElement, setnoofElement] = useState(4);
+
+  const loadmore = () => {
+    setnoofElement(noofElement + noofElement);
+  };
+  const slice = data.cardData.slice(0, noofElement);
+
   useEffect(() => {
     const workSection = document.querySelector(".section-work-data");
     const workObserver = new IntersectionObserver(
@@ -52,6 +78,7 @@ const Hero = () => {
 
     workObserver.observe(workSection);
   });
+
   return (
     <>
       <div style={{ padding: "0", margin: "0" }}>
@@ -60,7 +87,7 @@ const Hero = () => {
           style={{ padding: "0", margin: "0" }}
         >
           <div className="section-hero-data">
-            <h1 className="hero-heading">
+            <h1 className="hero-heading" data-aos="fade-right">
               <span
                 style={{
                   color: "black",
@@ -72,15 +99,15 @@ const Hero = () => {
               </span>
               C<span>IV</span>F
             </h1>
-            <p className="hero-top-data">
+            <p className="hero-top-data" data-aos="fade-right">
               CHARUSAT <span> Innovative Ventures </span> Foundation{" "}
             </p>
-            <div  style={{paddingLeft: "15px"}}>
+            <div>
               <MDBBtn
                 rounded
-                className="mx-auto"
+                className="mx-auto apply"
                 color="info"
-                style={{ width: "250px", backgroundColor: "#8490ff"}}
+                style={{ width: "250px", backgroundColor: "#8490ff" }}
               >
                 Apply For Start-up
               </MDBBtn>
@@ -112,11 +139,20 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="bg-second" style={{ padding: "0", margin: "0" }}>
+        <div
+          className="bg-second"
+          data-aos="fade-right"
+          style={{ padding: "0", margin: "0" }}
+        >
           <div className="section container">
             <div className="row">
               <div className="col-8">
-                <div className="info-data">CIVF Start Up Program</div>
+                <div className="info-data">
+                  <span style={{ color: "#8490ff", fontSize: "3rem" }}>
+                    C<span style={{ color: "tomato" }}>IV</span>F{" "}
+                  </span>
+                  Start Up Program
+                </div>
                 <div className="vision">
                   Vision :{" "}
                   <span>
@@ -141,6 +177,7 @@ const Hero = () => {
                         for Societal Development.
                       </span>
                     </b>
+                    rem
                   </li>
                 </p>
               </div>
@@ -153,7 +190,11 @@ const Hero = () => {
           </div>
         </div>
 
-        <section class="section section-work-data" style={{ padding: "10px" }}>
+        <section
+          class="section section-work-data "
+          data-aos="fade-in"
+          style={{ padding: "10px" }}
+        >
           <div className="counter-heading d-flex justify-content-center">
             <h1 className="hero-heading" style={{ fontSize: "50px" }}>
               C<span>IV</span>F{" "}
@@ -253,11 +294,128 @@ const Hero = () => {
           </div>
         </section>
 
-        <div className="latest-news" style={{ padding: "20px" }}>
+        <div className="latest-news bg-second" style={{ padding: "20px" }}>
           <div className="title d-flex justify-content-center">
-            Latest - <span>- Announcements</span>
+            <div className="row">
+              <div className="col-2">Latest</div>
+              <div
+                className="col-2"
+                style={{ color: "tomato", marginLeft: "50px" }}
+              >
+                Announcements
+              </div>
+            </div>
+          
           </div>
         </div>
+
+        <Element name="topSection">
+          <TopContainer>
+            <BackgroundFilter>
+              <h2
+                className="heading"
+                data-aos="fade-in"
+                style={{ paddingTop: "50px", float: "left" }}
+              >
+                <span style={{ color: "#f5f5f5", fontSize: "35px" }}>
+                  Environmental Engineering Laboratory
+                </span>{" "}
+                <span style={{ color: "#f5f5f5", fontSize: "20px" }}>@</span>
+                <span style={{ color: "#8490ff" }}>
+                  C<span style={{ color: "tomato" }}>IV</span>F
+                </span>
+              </h2>
+              <p
+                className="sub-heading"
+                data-aos="fade-in"
+                style={{ padding: "40px", textAlign: "center" }}
+              >
+                Services of NABL approved Environmental Engineering Laboratory
+                is extended for solving industrial problems.Services of NABL
+                approved Environmental Engineering Laboratory is extended for
+                solving industrial problems.Services of NABL approved
+                Environmental Engineering Laboratory is extended for solving
+                industrial problems.
+              </p>
+              <button
+                style={{
+                  color: "tomato",
+                  borderColor: "#8490ff",
+                  borderColor: "tomato",
+                }}
+                type="button"
+                data-aos="fade-in"
+                class="btn btn-outline-tomato btn-rounded sub-heading"
+                data-mdb-ripple-color="dark"
+              >
+                <a
+                  href={require("../../pdfs/20IT120_JIMMY_FSWD_PRACTICAL_1.pdf")}
+                  download="NablBroucher"
+                >
+                  Brochure of NABL lab
+                </a>
+              </button>
+            </BackgroundFilter>
+          </TopContainer>
+        </Element>
+
+        <section
+          className="py-4 pt-lg-5 container bg-second"
+          style={{ marginTop: "50px", width: "80%" }}
+        >
+          <div className="headingnews" data-aos="fade-left">
+            Latest <span> Startup </span>Stories
+          </div>
+          <div
+            className="row justify-content-center align-item-center"
+            data-aos="fade-left"
+            style={{ paddingTop: "30px" }}
+          >
+            {slice.map((item, index) => {
+              return (
+                <div
+                  className="col-11 col-md-6 col-lg-3 mx-0 mb-4 news"
+                  key={index}
+                >
+                  <div className="p-0 overflow-hidden">
+                    <img
+                      src={item.img}
+                      className=""
+                      style={{
+                        height: "200px",
+                        width: "300px",
+                        objectFit: "cover",
+                      }}
+                    />
+                    <div className="description">
+                      <h5 className="desc">{item.type}</h5>
+                      <a className="subdesc">
+                        {item.desc.substring(0, 150)}...
+                      </a>
+                      <p className="subsubdesc">
+                        {item.subdesc.substring(0, 200)}...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <button
+            style={{
+              float: "right",
+              color: "tomato",
+              borderColor: "#8490ff",
+            }}
+            type="button"
+            className="btn btn-outline-secondary btn-rounded  color: #ffffff;
+            border-color: #8490ff;"
+            onClick={loadmore}
+            data-mdb-ripple-color="dark"
+          >
+            Load More
+          </button>
+        </section>
       </div>
     </>
   );

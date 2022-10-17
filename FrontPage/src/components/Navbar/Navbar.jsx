@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// import ReactDOM from "react-dom";
+// import Popup from "reactjs-popup";
 import {
   MDBNavbar,
   MDBContainer,
@@ -13,19 +15,33 @@ import {
   MDBDropdownItem,
   MDBDropdownToggle,
 } from "mdb-react-ui-kit";
+// import styled, { css } from "styled-components";
 import "./Navbar.css";
+import Login from "../../pages/Login/Login";
 
 const Navbars = () => {
   const [showNavNoTogglerSecond, setShowNavNoTogglerSecond] = useState(false);
+  const [isOpen, setOpen] = useState(false);
+
+  const onClick = () => {
+    setOpen(!isOpen);
+    var blur = document.getElementById("home");
+    blur.classList.toggle("active");
+    // document.body.style.opacity = 0.5;
+  };
 
   return (
     <>
       <MDBNavbar
         fixed="top"
         expand="lg"
-        light
-        bgColor="light"
-        style={{ height: "80px", marginTop: "20px" }}
+        // light
+        // bgColor="light"
+        style={{
+          height: "80px",
+          marginTop: "20px",
+          backdropFilter: "blur(8px)",
+        }}
       >
         <MDBContainer fluid>
           <MDBNavbarBrand href="#" style={{ padding: "7px" }}>
@@ -42,7 +58,10 @@ const Navbars = () => {
             <MDBIcon icon="bars" fas />
           </MDBNavbarToggler>
           <MDBCollapse navbar show={showNavNoTogglerSecond} className="home">
-            <MDBNavbarNav className="mr-auto mb-2 mb-lg-0 justify-content-center">
+            <MDBNavbarNav
+              className="mr-auto mb-2 mb-lg-0 justify-content-center blur"
+              id="home"
+            >
               <MDBDropdown group className="shadow-0">
                 <MDBDropdownToggle color="link" className="hover">
                   About us
@@ -140,14 +159,42 @@ const Navbars = () => {
                 </MDBNavbarLink>
               </MDBNavbarItem> */}
             </MDBNavbarNav>
+
+            {/* <Popup
+              modal
+              trigger={
+                <button>
+                  {" "}
+                  <MDBBtn
+                    rounded
+                    className="mx-auto"
+                    color="info"
+                    style={{ width: "200px", backgroundColor: "#8490ff" }}
+                  >
+                    {" "}
+                    Login / Register{" "}
+                  </MDBBtn>
+                </button>
+              }
+            >
+              {(close) => <Login close={close} />}
+            </Popup> */}
             <MDBBtn
               rounded
-              className="mx-auto"
+              className="mx-auto blurlogin"
+              id="blurlogin"
               color="info"
               style={{ width: "200px", backgroundColor: "#8490ff" }}
+              onClick={onClick}
             >
-              Login / Register
+              {" "}
+              Login / Register{" "}
             </MDBBtn>
+            {isOpen && (
+              <>
+                <Login />
+              </>
+            )}
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>

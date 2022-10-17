@@ -55,6 +55,7 @@ picture {
 .hero-img {
     max-width: 100%;
     /* margin: 10px; */
+    padding-right: 0;
 }
 
 .container {
@@ -103,30 +104,10 @@ picture {
     }
 }
 
-
-@-webkit-keyframes up-down {
-    0% {
-        transform: translateY(10px);
-    }
-
-    100% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes up-down {
-    0% {
-        transform: translateY(10px);
-    }
-
-    100% {
-        transform: translateY(-10px);
-    }
-}
-
 .hero-heading,
 .hero-top-data,
-.hero-para {
+.hero-para,
+.apply {
     animation: left-right 2s ease-in alternate-reverse both;
 }
 
@@ -239,4 +220,57 @@ picture {
 
 .latest-card {
     justify-content: center;
+}
+
+.headingnews {
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: #8490ff;
+    padding: 10px;
+}
+
+.headingnews span {
+    color: tomato;
+}
+
+.news {
+    cursor: pointer;
+}
+
+.description .desc {
+    text-transform: uppercase;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+.subdesc {
+    padding-top: 20px;
+    font-size: 18px;
+    color: black;
+}
+
+.description .subdesc a :hover {
+    cursor: pointer;
+    color: #8490ff;
+}
+
+.subsubdesc {
+    padding-top: 20px;
+
+}
+
+.heading {
+    color: #8490ff;
+    widows: 100%;
+    text-align: left;
+    font-size: 4rem;
+    text-align: center;
+    /* text-shadow: 1px 2px 3px #fff; */
+}
+
+.sub-heading {
+    color: #f5f5f5;
+    widows: 100%;
+    text-align: left;
+    font-size: 25px;
 }
