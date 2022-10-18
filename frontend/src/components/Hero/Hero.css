@@ -1,0 +1,299 @@
+.container {
+    padding: 5rem 2rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.section-hero-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.hero-top-data {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #8490ff
+}
+
+.hero-heading span {
+    text-transform: capitalize;
+}
+
+.hero-top-data span {
+    color: tomato;
+}
+
+.hero-heading {
+    text-transform: uppercase;
+    font-size: 5rem;
+    color: #8490ff;
+}
+
+.hero-para {
+    margin-top: 1.5rem;
+    margin-bottom: 3.4rem;
+    max-width: 70rem;
+    color: black;
+}
+
+.section-hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+picture {
+    text-align: center;
+}
+
+.hero-img {
+    max-width: 100%;
+    /* margin: 10px; */
+}
+
+.container {
+    /* max-width: 120rem; */
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    gap: 9rem;
+}
+
+.grid-two-column {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-column {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-column {
+    grid-template-columns: 1fr 1.2fr .5fr .8fr;
+}
+
+.section-hero-image {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@-webkit-keyframes up-down {
+    0% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.hero-heading,
+.hero-top-data,
+.hero-para,
+.apply {
+    animation: left-right 2s ease-in alternate-reverse both;
+}
+
+@-webkit-keyframes left-right {
+    0% {
+        transform: translatex(20px);
+    }
+
+    100% {
+        transform: translatex(0);
+    }
+}
+
+@keyframes left-right {
+    0% {
+        transform: translatex(20px);
+    }
+
+    100% {
+        transform: translatex(0);
+    }
+}
+
+.bg-second {
+    background-color: #f5f5f5;
+    /* width: 50rem; */
+}
+
+.info-data {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2.2rem;
+    color: #8490ff;
+    width: 300px;
+}
+
+.mission,
+.vision {
+    width: 800px;
+    color: tomato;
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding: 10px;
+}
+
+.mission span,
+.vision span {
+    color: black;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.hero-img {
+    animation: up-down2 2s ease-in alternate-reverse both;
+}
+
+@-webkit-keyframes up-down2 {
+    0% {
+        transform: translateY(50px);
+    }
+
+    100% {
+        transform: translatex(0);
+    }
+}
+
+@keyframes up-down2 {
+    0% {
+        transform: translateY(50px);
+    }
+
+    100% {
+        transform: translatex(0);
+    }
+}
+
+.section-work-data {
+    background: var(--gradientSupport);
+    text-align: center;
+    transition: all 0.7s linear;
+    color: tomato;
+}
+
+.counter-numbers {
+    font-size: 4.8rem;
+}
+
+.section-work-data p {
+    color: var(--white);
+    text-transform: capitalize;
+}
+
+.counter-name {
+    color: #8490ff;
+}
+
+/* .latest-news{
+    background-color: #f5f5f5;
+} */
+
+.title {
+    color: #8490ff;
+    font-size: 3rem;
+}
+
+.title span {
+    color: tomato;
+
+}
+
+.latest-card {
+    justify-content: center;
+}
+
+.headingnews {
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: #8490ff;
+    padding: 10px;
+}
+
+.headingnews span {
+    color: tomato;
+}
+
+.news {
+    cursor: pointer;
+}
+
+.description .desc {
+    text-transform: uppercase;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+.subdesc {
+    padding-top: 20px;
+    font-size: 18px;
+    color: black;
+}
+
+.description .subdesc a :hover {
+    cursor: pointer;
+    color: #8490ff;
+}
+
+.subsubdesc {
+    padding-top: 20px;
+
+}
+
+.heading {
+    color: #8490ff;
+    widows: 100%;
+    text-align: left;
+    font-size: 4rem;
+    text-align: center;
+    /* text-shadow: 1px 2px 3px #fff; */
+}
+
+.sub-heading {
+    color: #f5f5f5;
+    widows: 100%;
+    text-align: left;
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 700px) {
+    .homepage {
+        padding-top: 10%;
+    }
+
+    .hero-heading span {
+        font-size: 3rem;
+    }
+
+    .hero-top-data {
+        font-size: 1.3rem;
+    }
+
+    .hero-main {
+        padding: 0%;
+        margin: 0%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        text-align: center; 
+    }
+}
