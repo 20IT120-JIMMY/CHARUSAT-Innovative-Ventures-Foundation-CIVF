@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Footer from "./components/Footer/Footer";
+import News from "./pages/News/News";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/">
           <Route index element={<Home />} />
           {/* <Route path="login" element={<Login />} /> */}
+          <Route path="news" element={<News />} />
         </Route>
       </Routes>
       <Footer />

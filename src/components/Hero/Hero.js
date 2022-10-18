@@ -5,8 +5,9 @@ import startup from "../../images/startup.png";
 import { MDBBtn } from "mdb-react-ui-kit";
 import data from "./data.js";
 import "./Hero.css";
-import { Element, scroller } from "react-scroll";
+import { Element } from "react-scroll";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const TopContainer = styled.div`
   width: 100%;
@@ -81,23 +82,29 @@ const Hero = () => {
 
   return (
     <>
-      <div style={{ padding: "0", margin: "0" }}>
-        <div
-          className="container grid grid-two-column"
-          style={{ padding: "0", margin: "0" }}
-        >
+      <div className="homepage">
+        <div className="container grid grid-two-column hero-main">
           <div className="section-hero-data">
             <h1 className="hero-heading" data-aos="fade-right">
               <span
                 style={{
-                  color: "black",
-                  fontSize: "30px",
+                  color: "#404040",
                   paddingRight: "20px",
+                  fontWeight: "450",
+                  fontSize: "2.5rem",
                 }}
               >
                 Welcome to
               </span>
-              C<span>IV</span>F
+              C
+              <span
+                style={{
+                  color: "tomato",
+                }}
+              >
+                IV
+              </span>
+              F
             </h1>
             <p className="hero-top-data" data-aos="fade-right">
               CHARUSAT <span> Innovative Ventures </span> Foundation{" "}
@@ -305,7 +312,6 @@ const Hero = () => {
                 Announcements
               </div>
             </div>
-          
           </div>
         </div>
 
@@ -389,9 +395,11 @@ const Hero = () => {
                     />
                     <div className="description">
                       <h5 className="desc">{item.type}</h5>
-                      <a className="subdesc">
-                        {item.desc.substring(0, 150)}...
-                      </a>
+                      <Link to="news">
+                        <a className="subdesc">
+                          {item.desc.substring(0, 150)}...
+                        </a>
+                      </Link>
                       <p className="subsubdesc">
                         {item.subdesc.substring(0, 200)}...
                       </p>

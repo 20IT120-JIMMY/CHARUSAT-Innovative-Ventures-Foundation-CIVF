@@ -25,7 +25,7 @@ const Navbars = () => {
 
   const onClick = () => {
     setOpen(!isOpen);
-    var blur = document.getElementById("home");
+    var blur = document.getElementById("nav");
     blur.classList.toggle("active");
     // document.body.style.opacity = 0.5;
   };
@@ -37,14 +37,10 @@ const Navbars = () => {
         expand="lg"
         // light
         // bgColor="light"
-        style={{
-          height: "80px",
-          marginTop: "20px",
-          backdropFilter: "blur(8px)",
-        }}
+        className="MDBNAVBAR"
       >
         <MDBContainer fluid>
-          <MDBNavbarBrand href="#" style={{ padding: "7px" }}>
+          <MDBNavbarBrand href="#" style={{ padding: "0.5em" }}>
             Logo
           </MDBNavbarBrand>
           <MDBNavbarToggler
@@ -60,7 +56,7 @@ const Navbars = () => {
           <MDBCollapse navbar show={showNavNoTogglerSecond} className="home">
             <MDBNavbarNav
               className="mr-auto mb-2 mb-lg-0 justify-content-center blur"
-              id="home"
+              id="nav"
             >
               <MDBDropdown group className="shadow-0">
                 <MDBDropdownToggle color="link" className="hover">
@@ -181,10 +177,9 @@ const Navbars = () => {
             </Popup> */}
             <MDBBtn
               rounded
-              className="mx-auto blurlogin"
+              className="blurlogin"
               id="blurlogin"
               color="info"
-              style={{ width: "200px", backgroundColor: "#8490ff" }}
               onClick={onClick}
             >
               {" "}
