@@ -22,7 +22,7 @@
 }
 
 .hero-heading span {
-    color: tomato;
+    text-transform: capitalize;
 }
 
 .hero-top-data span {
@@ -55,11 +55,10 @@ picture {
 .hero-img {
     max-width: 100%;
     /* margin: 10px; */
-    padding-right: 0;
 }
 
 .container {
-    max-width: 120rem;
+    /* max-width: 120rem; */
     margin: 0 auto;
 }
 
@@ -133,6 +132,7 @@ picture {
 
 .bg-second {
     background-color: #f5f5f5;
+    /* width: 50rem; */
 }
 
 .info-data {
@@ -273,4 +273,27 @@ picture {
     widows: 100%;
     text-align: left;
     font-size: 25px;
+}
+
+@media only screen and (max-width: 700px) {
+    .homepage {
+        padding-top: 10%;
+    }
+
+    .hero-heading span {
+        font-size: 3rem;
+    }
+
+    .hero-top-data {
+        font-size: 1.3rem;
+    }
+
+    .hero-main {
+        padding: 0%;
+        margin: 0%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        text-align: center; 
+    }
 }
